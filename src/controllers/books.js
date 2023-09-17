@@ -38,7 +38,6 @@ const updateBook = (request, response) => {
 
 const deleteBook = (request, response) => {
   const { book_id } = request.params;
-  // console.log(request)
   return Book.findByIdAndDelete(book_id)
     .then(() => {
       if (!book) response.status(404).send("Book is not found");

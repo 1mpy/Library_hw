@@ -18,14 +18,13 @@ const {
 const handleError = (error) => {
   console.log(error);
 };
-// console.log(MONGO_URL);
+
 mongoose
   .connect(MONGO_URL)
   .then(() => console.log("Connected to DB"))
   .catch((error) => handleError(error));
 
 const app = express();
-
 
 app.use(cors());
 app.use(logger);
