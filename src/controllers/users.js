@@ -38,7 +38,6 @@ const updateUser = (request, response) => {
 
 const deleteUser = (request, response) => {
   const { user_id } = request.params;
-  // console.log(request)
   return User.findByIdAndDelete(user_id)
     .then(() => {
       if (!user) response.status(404).send("User is not found");
